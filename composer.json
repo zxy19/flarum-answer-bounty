@@ -1,0 +1,59 @@
+{
+    "name": "xypp/flarum-answer-bounty",
+    "description": "Set bounty for fof-best-answer",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.2.0",
+        "fof/best-answer": "*"
+    },
+    "authors": [
+        {
+            "name": "小鱼飘飘",
+            "email": "z@xypp.cc",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xypp\\AnswerBounty\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Answer Bounty",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-coins",
+                "color": "#fff",
+                "backgroundColor": "#f57f17"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": true,
+                "js": true,
+                "jsCommon": true,
+                "css": true,
+                "locale": true,
+                "gitConf": true,
+                "githubActions": true,
+                "prettier": true,
+                "typescript": true,
+                "bundlewatch": false,
+                "backendTesting": true,
+                "editorConfig": true,
+                "styleci": true
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "mattoid/flarum-ext-money-history": "*"
+    }
+}
