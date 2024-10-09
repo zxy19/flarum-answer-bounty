@@ -59,7 +59,7 @@ class SavingDiscussionListener
                 }
 
                 User::lockForUpdate()->where('id', $user->id)->decrement('money', $bounty);
-
+                $user->refresh();
                 if (class_exists(\Mattoid\MoneyHistory\Event\MoneyHistoryEvent::class)) {
                     $this->events->dispatch(new \Mattoid\MoneyHistory\Event\MoneyHistoryEvent(
                         $user,
