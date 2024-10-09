@@ -30,6 +30,7 @@ class SetBestAnswerListener
                 ));
             }
             $event->discussion->setAttribute("bounty", null);
+            $event->discussion->save();
         }
     }
 }

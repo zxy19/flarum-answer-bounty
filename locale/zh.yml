@@ -1,0 +1,23 @@
+xypp-answer-bounty:
+  forum:
+    modal:
+      title: 设置悬赏
+      label: 数额
+      submit: 提交
+      clear: 清除
+    composer:
+      set: 设置悬赏
+      edit: 悬赏({bounty})
+    discussion:
+      edit: 编辑悬赏 ({bounty})
+      set: 设置悬赏
+    tip: 这篇帖子正在悬赏最佳答案，赏金<span>{money}</span>.
+  admin:
+    permissions:
+      moderate: 管理别人的悬赏
+      use: 设置悬赏
+  api:
+    bounty: 最佳答案的赏金
+    bounty_clear: 清除悬赏
+    bounty_set: 设置悬赏
+    not_enough_money: 你没有足够的资产来设置悬赏。
