@@ -63,7 +63,7 @@ class SavingDiscussionListener
                 if (class_exists(\Mattoid\MoneyHistory\Event\MoneyHistoryEvent::class)) {
                     $this->events->dispatch(new \Mattoid\MoneyHistory\Event\MoneyHistoryEvent(
                         $user,
-                        $bounty,
+                        -$bounty,
                         'bounty_set',
                         $this->translator->trans('xypp-answer-bounty.api.bounty_set')
                     ));
