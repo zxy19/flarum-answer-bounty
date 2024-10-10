@@ -12,6 +12,7 @@ xypp-answer-bounty:
       edit: 编辑悬赏 ({bounty})
       set: 设置悬赏
     tip: 这篇帖子正在悬赏最佳答案，赏金<span>{money}</span>.
+    badge: 悬赏
   admin:
     permissions:
       moderate: 管理别人的悬赏

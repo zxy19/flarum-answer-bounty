@@ -12,6 +12,7 @@ xypp-answer-bounty:
       edit: Edit Bounty ({bounty})
       set: Set Bounty
     tip: This discussion is seeking the best answer with a bounty of <span>{money}</span>.
+    badge: Bounty
   admin:
     permissions:
       moderate: Moderate Other's Bounty
