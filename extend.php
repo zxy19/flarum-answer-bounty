@@ -17,8 +17,10 @@ use Flarum\Discussion\Event\Saving;
 use Flarum\Extend;
 use Flarum\Http\RequestUtil;
 use FoF\BestAnswer\Events\BestAnswerSet;
+use FoF\BestAnswer\Events\BestAnswerUnset;
 use Xypp\AnswerBounty\Listener\SavingDiscussionListener;
 use Xypp\AnswerBounty\Listener\SetBestAnswerListener;
+use Xypp\AnswerBounty\Listener\UnsetBestAnswerListener;
 
 return [
     (new Extend\Frontend('forum'))
@@ -30,6 +32,7 @@ return [
     new Extend\Locales(__DIR__ . '/locale'),
     (new Extend\Event)
         ->listen(BestAnswerSet::class, SetBestAnswerListener::class)
+        ->listen(BestAnswerUnset::class, UnsetBestAnswerListener::class)
         ->listen(Saving::class, SavingDiscussionListener::class),
     (new Extend\ApiSerializer(DiscussionSerializer::class))
         ->attribute('xypp-answer-bounty-use', function (DiscussionSerializer $serializer, $model, $attrs) {
