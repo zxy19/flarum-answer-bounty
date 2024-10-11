@@ -29,6 +29,10 @@ class SetBestAnswerListener
                     $this->translator->trans('xypp-answer-bounty.api.bounty')
                 ));
             }
+
+            $event->discussion->setAttribute("sent_bounty", $bounty);
+            $event->discussion->setAttribute("bounty", null);
+            $event->discussion->save();
         }
     }
 }

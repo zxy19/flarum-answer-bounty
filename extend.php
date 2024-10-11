@@ -32,7 +32,6 @@ return [
     new Extend\Locales(__DIR__ . '/locale'),
     (new Extend\Event)
         ->listen(BestAnswerSet::class, SetBestAnswerListener::class)
-        ->listen(BestAnswerUnset::class, UnsetBestAnswerListener::class)
         ->listen(Saving::class, SavingDiscussionListener::class),
     (new Extend\ApiSerializer(DiscussionSerializer::class))
         ->attribute('xypp-answer-bounty-use', function (DiscussionSerializer $serializer, $model, $attrs) {
@@ -43,5 +42,7 @@ return [
         })
         ->attribute('bounty', function (DiscussionSerializer $serializer, $model, $attrs) {
             return $model->getAttribute('bounty');
+        })->attribute('sent_bounty', function (DiscussionSerializer $serializer, $model, $attrs) {
+            return $model->getAttribute('sent_bounty');
         }),
 ];
