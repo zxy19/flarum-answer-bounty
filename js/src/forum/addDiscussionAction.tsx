@@ -7,15 +7,17 @@ import BountyInput from './components/BountyInput';
 export default function addDiscussionAction() {
     extend(DiscussionControls, 'moderationControls', function (items, discussion) {
         const discussionUser = discussion.user();
+        const discussionTags = discussion.tags();
         const currentUser = app.session?.user;
         let show = false;
-        if (currentUser && discussionUser && currentUser.id() !== discussionUser.id()) {
-            if (discussion.attribute("xypp-answer-bounty-moderate")) {
+        if (!discussion.attribute("hasBestAnswer") && discussionTags && discussionTags.find((e: any) => e.attribute("isQnA")))
+            if (currentUser && discussionUser && currentUser.id() !== discussionUser.id()) {
+                if (discussion.attribute("xypp-answer-bounty-moderate")) {
+                    show = true;
+                }
+            } else if (discussion.attribute("xypp-answer-bounty-use")) {
                 show = true;
             }
-        } else if (discussion.attribute("xypp-answer-bounty-use")) {
-            show = true;
-        }
 
         if (show) {
             items.add('fingerprint-recorder-fingerprint', Button.component({

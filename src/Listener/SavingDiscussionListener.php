@@ -20,6 +20,10 @@ class SavingDiscussionListener
     public function __invoke(Saving $event)
     {
         if (Arr::has($event->data, 'attributes.bounty')) {
+            if (($event->discussion->bestAnswerPost !== null)) {
+                throw new ValidationException(['bounty' => $this->translator->trans('xypp-answer-bounty.api.bounty_sent')]);
+            }
+
             $user = $event->discussion->user;
 
             // Check permission

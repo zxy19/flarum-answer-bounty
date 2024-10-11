@@ -23,3 +23,4 @@ xypp-answer-bounty:
     bounty_clear: 清除悬赏
     bounty_set: 设置悬赏
     not_enough_money: 你没有足够的资产来设置悬赏。
+    bounty_sent: 赏金已经发放，在修改前请取消最佳答案
