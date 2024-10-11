@@ -33,6 +33,11 @@ class SetBestAnswerListener
             $event->discussion->setAttribute("sent_bounty", $bounty);
             $event->discussion->setAttribute("bounty", null);
             $event->discussion->save();
+        } else {
+            if ($event->discussion->getAttribute("sent_bounty")) {
+                $event->discussion->setAttribute("sent_bounty", null);
+                $event->discussion->save();
+            }
         }
     }
 }
