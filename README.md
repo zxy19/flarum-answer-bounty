@@ -4,6 +4,18 @@
 
 A [Flarum](http://flarum.org) extension. Set bounty for fof-best-answer
 
+## Usage
+
+For new posts:
+
+1. Select a tag that can set best answer.
+2. Click `Bounty` button to set bounty.
+
+For existing posts:
+
+1. Open discussion action menu.
+2. Click `Set Bounty` button to set bounty.
+
 ## Installation
 
 Install with composer:
@@ -23,5 +35,4 @@ php flarum cache:clear
 ## Links
 
 - [Packagist](https://packagist.org/packages/xypp/flarum-answer-bounty)
-- [GitHub](https://github.com/xypp/flarum-answer-bounty)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [GitHub](https://github.com/zxy19/flarum-answer-bounty)
